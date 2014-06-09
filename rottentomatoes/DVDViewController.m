@@ -115,7 +115,7 @@
     
     cell.tag = indexPath.row;
     
-    [cell addGestureRecognizer:tap];
+ //  [cell addGestureRecognizer:tap];
     
     
     

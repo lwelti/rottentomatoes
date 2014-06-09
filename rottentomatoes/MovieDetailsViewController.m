@@ -46,7 +46,7 @@
     
     NSURL *url = [NSURL URLWithString:imageUrl];
     
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url options:0 error:nil];
+    // NSData *imageData = [[NSData alloc] initWithContentsOfURL:url options:0 error:nil];
     
     // UIImage *image = [[UIImage alloc] initWithData:imageData];
     
