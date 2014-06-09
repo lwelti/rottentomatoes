@@ -20,8 +20,12 @@ Completed user stories:
 
 
 Notes:
+Not able to resize the image.
 
+Not able to fade the image.
+
+Not able to setup the "network error"
 
 Walkthroug of all user stories:
 
-![Vide Walkthrough] (https://github.com/lwelti/rottentomatoes/blob/master/rottentomatoes.gif)
+![Video Walkthrough] (rottentomatoes.gif)
