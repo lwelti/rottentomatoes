@@ -128,7 +128,7 @@
     
     MovieDetailsViewController *mdc = [[MovieDetailsViewController alloc] init];
     
-
+    
     
     NSLog(@" %ld", (long)recognizer.self.view.tag);
     
@@ -137,18 +137,12 @@
     mdc.tempTittle =movie[@"title"];
     mdc.tempSynopsis = movie[@"synopsis"];
     
-    
     NSString *posterUrl = movie[@"posters"][@"original"];
     
-NSString *imageUrl = movie[@"posters"][@"thumbnail"];
+    NSString *imageUrl = movie[@"posters"][@"thumbnail"];
     
-        mdc.tempPoster = posterUrl;
+    mdc.tempPoster = posterUrl;
     mdc.tempThumbnail = imageUrl;
-    
-    
-    
-    
-
     
     
      [self.navigationController pushViewController:mdc animated:YES];

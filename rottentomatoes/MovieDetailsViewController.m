@@ -8,9 +8,14 @@
 
 #import "MovieDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 
 @interface MovieDetailsViewController ()
+
+
+
+
 
 @end
 
@@ -39,28 +44,25 @@
     
     NSString *imageUrl = self.tempThumbnail;
     
+    NSString *posterUrl = self.tempPoster;
+    
+    
     NSLog(@"%@",imageUrl);
     
     
     
     
-    NSURL *url = [NSURL URLWithString:imageUrl];
-    
-    // NSData *imageData = [[NSData alloc] initWithContentsOfURL:url options:0 error:nil];
-    
-    // UIImage *image = [[UIImage alloc] initWithData:imageData];
     
     
-   // self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+   // imageView.image = [UIImage imageWithColor:color];
+    
+    
+    NSURL *url = [NSURL URLWithString:posterUrl];
 
     
-    
-   // self.view.backgroundColor = [UIColor clearColor];
-    
+    [self.PosterView setImageWithURL:url  placeholderImage:[UIImage imageNamed:@"Placeholder"]];
     
     
-    
-    [self.PosterView setImageWithURL:url];
 
     
 
@@ -72,5 +74,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    // Create a 1 by 1 pixel context
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    [color setFill];
+    UIRectFill(rect);   // Fill it with your color
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 
 @end
