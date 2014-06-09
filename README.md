@@ -16,6 +16,8 @@ Completed user stories:
  * [x] Optional: Customize the navigation bar.
  * [x] Optional: Add a tab bar for Box Office and DVD
  * [x] Must use Cocoapods: AFNetworking
+ * [x] Optional: All images fade in (temporal Image)
+ * [x] Optional: User sees error message when there's a networking error.
 
 
 
@@ -23,9 +25,8 @@ Completed user stories:
 Notes:
 Not able to resize the image.
 
-Not able to fade the image.
+I was able to add the network label, but you need to turn off Network in order to see it.
 
-Not able to setup the "network error"
 
 Walkthroug of all user stories:
 
