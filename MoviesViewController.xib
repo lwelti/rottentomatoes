@@ -24,10 +24,10 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHj-su-UL8">
                     <rect key="frame" x="0.0" y="85" width="320" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="highlightedColor"/>
-                    <color key="shadowColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
             </subviews>

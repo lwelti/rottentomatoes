@@ -42,10 +42,32 @@
     
 }
 
+- (void)refreshMyTable:(UIRefreshControl *)refreshControl {
+    
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
+
+    
+}
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
+    [refreshControl addTarget:self
+                action:@selector(refreshMyTable:)
+      forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:refreshControl];
+    
+
+    
+    
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -68,10 +90,16 @@
       //  NSLog(@"Error: %@", error);
         
         NSLog(@"NETWORK ERROR");
-        
-        
-        
+    
         self.NetworkErrorLabel.text = @"Network Error!!";
+        self.NetworkErrorLabel.backgroundColor = [UIColor blueColor];
+        self.NetworkErrorLabel.layer.borderColor = [UIColor grayColor].CGColor;
+        self.NetworkErrorLabel.layer.borderWidth = 1;
+        self.NetworkErrorLabel.layer.cornerRadius = 1;
+        self.NetworkErrorLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.NetworkErrorLabel.layer.shadowOffset = CGSizeMake(5, 5);
+        self.NetworkErrorLabel.layer.shadowOpacity = 0.8;
+        self.NetworkErrorLabel.layer.shadowRadius = 3;
         
         [self.tableView reloadData];
 
@@ -80,21 +108,6 @@
     
     
 
-    
- /*
-    [NSURLConnection
-        sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-       // NSLog(@"%@", object);
-        
-        self.movies = object[@"movies"];
-        [self.tableView reloadData];
-  
-
-    }];
-    
-  */
     
   
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
@@ -104,6 +117,8 @@
     
     
 }
+
+
 
 
 
@@ -186,6 +201,7 @@ NSString *imageUrl = movie[@"posters"][@"thumbnail"];
     
     return cell;
 }
+
 
 
 
