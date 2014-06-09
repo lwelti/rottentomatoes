@@ -47,6 +47,8 @@
 		C9E45F5D1943B2CF00580165 /* TabControllerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E45F5B1943B2CF00580165 /* TabControllerTableViewController.xib */; };
 		C9E45F611943B8D100580165 /* DVDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E45F5F1943B8D100580165 /* DVDViewController.m */; };
 		C9E45F621943B8D100580165 /* DVDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E45F601943B8D100580165 /* DVDViewController.xib */; };
+		C9E45F661946357B00580165 /* NetworkErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E45F641946357B00580165 /* NetworkErrorCell.m */; };
+		C9E45F671946357B00580165 /* NetworkErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E45F651946357B00580165 /* NetworkErrorCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,9 @@
 		C9E45F5E1943B8D100580165 /* DVDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDViewController.h; sourceTree = "<group>"; };
 		C9E45F5F1943B8D100580165 /* DVDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDViewController.m; sourceTree = "<group>"; };
 		C9E45F601943B8D100580165 /* DVDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVDViewController.xib; sourceTree = "<group>"; };
+		C9E45F631946357B00580165 /* NetworkErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkErrorCell.h; sourceTree = "<group>"; };
+		C9E45F641946357B00580165 /* NetworkErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkErrorCell.m; sourceTree = "<group>"; };
+		C9E45F651946357B00580165 /* NetworkErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkErrorCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +215,9 @@
 				C9E45F5E1943B8D100580165 /* DVDViewController.h */,
 				C9E45F5F1943B8D100580165 /* DVDViewController.m */,
 				C9E45F601943B8D100580165 /* DVDViewController.xib */,
+				C9E45F631946357B00580165 /* NetworkErrorCell.h */,
+				C9E45F641946357B00580165 /* NetworkErrorCell.m */,
+				C9E45F651946357B00580165 /* NetworkErrorCell.xib */,
 			);
 			path = rottentomatoes;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94DA6DB193FDB5800FFD788 /* InfoPlist.strings in Resources */,
+				C9E45F671946357B00580165 /* NetworkErrorCell.xib in Resources */,
 				C94DA703193FDCA700FFD788 /* MoviesViewController.xib in Resources */,
 				C9E45F131941199B00580165 /* MovieCell.xib in Resources */,
 				C9E45F5D1943B2CF00580165 /* TabControllerTableViewController.xib in Resources */,
@@ -425,6 +434,7 @@
 				C9E45F35194238CD00580165 /* AFURLResponseSerialization.m in Sources */,
 				C9E45F50194238D500580165 /* UIWebView+AFNetworking.m in Sources */,
 				C9E45F36194238CD00580165 /* AFURLSessionManager.m in Sources */,
+				C9E45F661946357B00580165 /* NetworkErrorCell.m in Sources */,
 				C9E45F49194238D500580165 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C94DA6DD193FDB5800FFD788 /* main.m in Sources */,
 			);

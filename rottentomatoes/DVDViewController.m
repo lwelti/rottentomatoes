@@ -8,6 +8,7 @@
 
 #import "DVDViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "AFNetworking.h"
 #import "MovieDetailsViewController.h"
 #import "MovieDetails.h"
 
@@ -39,7 +40,8 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+
+    /*
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -58,6 +60,34 @@
          }
          
      }];
+    */
+    
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        self.dvds = responseObject[@"movies"];
+        [self.tableView reloadData];
+        
+        NSLog(@"JSON: %@", responseObject);
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //  NSLog(@"Error: %@", error);
+        
+        NSLog(@"NETWORK ERROR");
+        
+        
+        
+       // self.NetworkErrorLabel.text = @"Network Error";
+        
+        
+        
+        
+    }];
+
     
     
     

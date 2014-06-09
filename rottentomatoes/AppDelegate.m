@@ -40,10 +40,6 @@
     UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
     secondNavigationController.tabBarItem.title = @"Top DVDs";
     
-    
-    
-    
-    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[firstNavigationController, secondNavigationController];
     
