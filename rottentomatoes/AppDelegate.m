@@ -34,11 +34,14 @@
     MoviesViewController *firstViewController = [[MoviesViewController alloc] init];
     UINavigationController *firstNavigationController = [[UINavigationController alloc] initWithRootViewController:firstViewController];
     firstNavigationController.tabBarItem.title = @"Box Office";
+    firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"MoviesTab"];
     
     
     DVDViewController *secondViewController = [[DVDViewController alloc] init];
     UINavigationController *secondNavigationController = [[UINavigationController alloc] initWithRootViewController:secondViewController];
     secondNavigationController.tabBarItem.title = @"Top DVDs";
+    secondNavigationController.tabBarItem.image = [UIImage imageNamed:@"MoviesTab"];
+    
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[firstNavigationController, secondNavigationController];
