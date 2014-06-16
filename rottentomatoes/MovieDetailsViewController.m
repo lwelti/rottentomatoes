@@ -8,7 +8,6 @@
 
 #import "MovieDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
-#import "UIImageView+AFNetworking.h"
 
 
 @interface MovieDetailsViewController ()
@@ -38,7 +37,6 @@
     self.navigationItem.title = self.tempTittle;
 
     
-    self.movieDetailTitle.text = self.tempTittle;
     
     self.movieDetailSynopsis.text = self.tempSynopsis;
     
@@ -50,22 +48,16 @@
     NSLog(@"%@",imageUrl);
     
     
-    
-    
-    
-    
-   // imageView.image = [UIImage imageWithColor:color];
-    
-    
     NSURL *url = [NSURL URLWithString:posterUrl];
-
+    
     
     [self.PosterView setImageWithURL:url  placeholderImage:[UIImage imageNamed:@"Placeholder"]];
     
     
+    
+    self.movieDetailTitle.text = self.tempTittle;
 
     
-
     
 }
 

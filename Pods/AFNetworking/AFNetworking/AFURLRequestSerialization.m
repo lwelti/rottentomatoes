@@ -741,8 +741,6 @@ NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
 @end
 
 @implementation AFMultipartBodyStream
-@synthesize streamStatus;
-@synthesize streamError;
 
 - (id)initWithStringEncoding:(NSStringEncoding)encoding {
     self = [super init];
@@ -1182,7 +1180,7 @@ typedef enum {
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    AFJSONRequestSerializer *serializer = [super copyWithZone:zone];
+    AFJSONRequestSerializer *serializer = [[[self class] allocWithZone:zone] init];
     serializer.writingOptions = self.writingOptions;
 
     return serializer;
@@ -1264,7 +1262,7 @@ typedef enum {
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    AFPropertyListRequestSerializer *serializer = [super copyWithZone:zone];
+    AFPropertyListRequestSerializer *serializer = [[[self class] allocWithZone:zone] init];
     serializer.format = self.format;
     serializer.writeOptions = self.writeOptions;
 

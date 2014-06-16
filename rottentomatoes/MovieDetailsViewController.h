@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+AFNetworking.h"
+
 
 @interface MovieDetailsViewController : UIViewController
 
@@ -20,6 +22,8 @@
 @property NSString *tempSynopsis;
 @property NSString *tempPoster;
 @property NSString *tempThumbnail;
+@property int movieId;
+
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *PosterView;

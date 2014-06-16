@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "MovieDetailsViewController.h"
 #import "MovieDetails.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface MoviesViewController ()
 
@@ -66,25 +67,22 @@
     [self.tableView addSubview:refreshControl];
     
 
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+    
     
     
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    // NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
-    
-   // NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g9au4hv6khv6wzvzgt55gpqs" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
         
         self.movies = responseObject[@"movies"];
         [self.tableView reloadData];
 
       NSLog(@"JSON: %@", responseObject);
-        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
       //  NSLog(@"Error: %@", error);
@@ -100,21 +98,18 @@
         self.NetworkErrorLabel.layer.shadowOffset = CGSizeMake(5, 5);
         self.NetworkErrorLabel.layer.shadowOpacity = 0.8;
         self.NetworkErrorLabel.layer.shadowRadius = 3;
-        
         [self.tableView reloadData];
-
         
     }];
-    
-    
-
-    
   
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     self.tableView.rowHeight = 100;
+
     
-   
-    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
     
 }
 
@@ -143,7 +138,11 @@
     
     mdc.tempPoster = posterUrl;
     mdc.tempThumbnail = imageUrl;
+    mdc.movieId = (int)movie[@"id"];
     
+    NSLog(@"MOvie id %d", mdc.movieId);
+    
+
     
      [self.navigationController pushViewController:mdc animated:YES];
     
@@ -170,15 +169,20 @@
     
     NSDictionary *movie = self.movies[indexPath.row];
     
-    
-    
-    
     NSString *imageUrl = movie[@"posters"][@"thumbnail"];
 
     NSURL *url = [NSURL URLWithString:imageUrl];
-    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-    [cell.posterView setImageWithURL:url];
+    [cell.posterView setImageWithURLRequest:request
+                          placeholderImage:[UIImage imageNamed:@"Placeholder"]
+                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                       
+                                       [cell.posterView setImage: image];
+                                       //[cell setNeedsLayout];
+                                       
+                                   } failure:nil];
+    
     
     cell.movieTitleLabel.text = movie[@"title"];
     cell.movieSynopsisLabel.text = movie[@"synopsis"];
@@ -186,6 +190,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     
     cell.tag = indexPath.row;
+    
+    
     
     [cell addGestureRecognizer:tap];
     
