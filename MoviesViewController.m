@@ -82,7 +82,7 @@
         self.movies = responseObject[@"movies"];
         [self.tableView reloadData];
 
-      NSLog(@"JSON: %@", responseObject);
+     // NSLog(@"JSON: %@", responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
       //  NSLog(@"Error: %@", error);
