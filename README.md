@@ -12,6 +12,7 @@ Completed user stories:
 
  * [x] Required: User can view a list of latest box office movies including title, cast and tomatoes rating
  * [x] Required: User can click on a movie in the list to bring up a details page with additional information such as synopsis
+ * [x] Optional: Use of pods: AFNetworking & MBProgressHUD
  * [x] Optional: User can pull to refresh the movie list.
  * [x] Optional: Customize the navigation bar.
  * [x] Optional: Add a tab bar for Box Office and DVD
@@ -23,9 +24,7 @@ Completed user stories:
 
 
 Notes:
-Not able to resize the image.
-
-I was able to add the network label, but you need to turn off Network in order to see it.
+ * I was able to add the network label, but you need to turn off Network in order to see it.
 
 
 Walkthroug of all user stories:
