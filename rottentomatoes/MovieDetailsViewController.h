@@ -13,9 +13,10 @@
 @interface MovieDetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailTitle;
-//@property (weak, nonatomic) IBOutlet UILabel *movieDetailSynopsis;
-@property (weak, nonatomic) IBOutlet UITextView *movieDetailSynopsis;
 
+@property (weak, nonatomic) IBOutlet UILabel *movieDetailSynopsis;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *movieSynopsisScroll;
 
 
 @property NSString *tempTittle;
@@ -24,9 +25,10 @@
 @property NSString *tempThumbnail;
 @property int movieId;
 
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *PosterView;
+
+
+
 
 
 
