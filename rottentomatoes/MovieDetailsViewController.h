@@ -16,7 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *movieDetailSynopsis;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *movieSynopsisScroll;
 
 
 @property NSString *tempTittle;
@@ -28,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *PosterView;
 
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
 
 

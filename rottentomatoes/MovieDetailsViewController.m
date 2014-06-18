@@ -57,8 +57,9 @@
     
     self.movieDetailTitle.text = self.tempTittle;
 
+    [self.scrollview setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)];
     
-    
+
 }
 
 - (void)didReceiveMemoryWarning
